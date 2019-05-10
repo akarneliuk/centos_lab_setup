@@ -13,4 +13,4 @@ I'm quite often rebuilding the lab VM or server and to ease this task decided to
 ## How to use
 Just download or copy the content of the files on the freshly installed CentOS Linux and execute:
 - `./initial_setup_virtualbox.sh` for installation with Virtual Box
-- `./initial_setuo_kvm.sh` for installation with QEMU/KVM
+- `./initial_setup_kvm.sh` for installation with QEMU/KVM
