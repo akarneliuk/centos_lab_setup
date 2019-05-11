@@ -3,7 +3,7 @@
 echo 'INSTALLING AND UPDATING APPS // YUM ...'
 
 sudo yum -y update && sudo yum -y upgrade
-sudo yum -y install ansible python python-devel epel-release python-pip vim gcc git python-netaddr wget tcpdump curl
+sudo yum -y install ansible python python-devel epel-release python-pip vim gcc git python-netaddr wget tcpdump curl vconfig telnet wireshark-gnome wireshark
 sudo yum -y group install "Development Tools"
 
 echo 'INSTALLING AND UPDATING APPS // PIP ...'
