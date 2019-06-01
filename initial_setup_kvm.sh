@@ -24,6 +24,7 @@ sudo yum -y localinstall vagrant_2.2.4_x86_64.rpm
 echo '=============================================================================================' > installation.log
 echo 'vagrant --version'
 vagrant --version >> installation.log
+# Details how to add libvirt provider `https://github.com/vagrant-libvirt/vagrant-libvirt`
 vagrant plugin install vagrant-libvirt
 echo 'vagrant plugin list'
 vagrant plugin list >> installation.log
