@@ -24,6 +24,9 @@ sudo yum -y localinstall vagrant_2.2.4_x86_64.rpm
 echo '=============================================================================================' > installation.log
 echo 'vagrant --version'
 vagrant --version >> installation.log
+vagrant plugin install vagrant-libvirt
+echo 'vagrant plugin list'
+vagrant plugin list >> installation.log
 echo '=============================================================================================' >> installation.log
 
 echo 'CREATING BRIDGE FOR OOB ...'
