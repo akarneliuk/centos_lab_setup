@@ -15,7 +15,7 @@ sudo pip install -r requirements.txt
 
 echo 'INSTALLING AND UPDATING APPS // KVM ...'
 
-sudo yum -y install qemu-kvm qemu-img virt-manager libvirt libvirt-python libvirt-client virt-install virt-viewer
+sudo yum -y install qemu-kvm qemu-img virt-manager libvirt libvirt-python libvirt-client virt-install virt-viewer libvirt-devel ruby-devel
 
 echo 'INSTALLING AND UPDATING APPS // VAGRANT ...'
 
