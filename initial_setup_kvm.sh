@@ -1,5 +1,9 @@
 #!/usr/bin/bash
 
+# Released on 08-09-2019
+
+CURRENT_PATH=$PWD
+
 echo 'INSTALLING AND UPDATING APPS // YUM ...'
 
 sudo yum -y update && sudo yum -y upgrade
@@ -24,21 +28,30 @@ sudo yum -y install sudo yum install -y yum-utils device-mapper-persistent-data 
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum -y install docker-ce docker-ce-cli containerd.io
 
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo systemctl start docker.service
+echo '=============================================================================================' >> installation.log
+sudo docker --version >> installation.log
+sudo docker-compose --version >> installation.log
+
 
 echo 'INSTALLING AND UPDATING APPS // POSTMAN ...'
 
-sudo mkdir /opt
+sudo yum -y install libXScrnSaver
 cd /opt
 sudo wget -O postman.tar.gz https://dl.pstmn.io/download/latest/linux64
 sudo tar -xzf postman.tar.gz -C /opt
 sudo ln -s /opt/Postman/Postman /usr/bin/postman
-cd ~
+sudo rm postman.tar.gz
+cd $CURRENT_PATH
 
 echo 'INSTALLING AND UPDATING APPS // VAGRANT ...'
 
 sudo wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.rpm
 sudo yum -y localinstall vagrant_2.2.4_x86_64.rpm
-echo '=============================================================================================' > installation.log
+echo '=============================================================================================' >> installation.log
 echo 'vagrant --version'
 vagrant --version >> installation.log
 # Details how to add libvirt provider `https://github.com/vagrant-libvirt/vagrant-libvirt`
