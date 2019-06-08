@@ -18,6 +18,22 @@ echo 'INSTALLING AND UPDATING APPS // KVM ...'
 
 sudo yum -y install qemu-kvm qemu-img virt-manager libvirt libvirt-python libvirt-client virt-install virt-viewer libvirt-devel ruby-devel
 
+echo 'INSTALLING AND UPDATING APPS // DOCKER ...'
+
+sudo yum -y install sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum -y install docker-ce docker-ce-cli containerd.io
+
+
+echo 'INSTALLING AND UPDATING APPS // POSTMAN ...'
+
+sudo mkdir /opt
+cd /opt
+sudo wget -O postman.tar.gz https://dl.pstmn.io/download/latest/linux64
+sudo tar -xzf postman.tar.gz -C /opt
+sudo ln -s /opt/Postman/Postman /usr/bin/postman
+cd ~
+
 echo 'INSTALLING AND UPDATING APPS // VAGRANT ...'
 
 sudo wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.rpm
@@ -47,7 +63,7 @@ echo 'ZONE=public' >> ifcfg-br0
 echo 'IPV6ADDR=fc00:de:1:ffff::1/64' >> ifcfg-br0
 sudo mv ifcfg-br0 /etc/sysconfig/network-scripts/
 sudo systemctl restart network
-echo '=============================================================================================' > installation.log
+echo '=============================================================================================' >> installation.log
 echo 'ip addr show dev br0'
 ip addr show dev br0 >> installation.log
 echo '=============================================================================================' >> installation.log
