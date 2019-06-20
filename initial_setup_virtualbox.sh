@@ -20,6 +20,7 @@ sudo pip install -r requirements.txt
 
 echo 'INSTALLING AND UPDATING APPS // Python 3.7 ...'
 
+sudo yum -y install openssl-devel libffi-devel zlib-devel
 cd /opt
 sudo wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
 sudo taf -xzf Python-3.7.3.tgz
