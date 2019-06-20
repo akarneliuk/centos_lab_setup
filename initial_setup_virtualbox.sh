@@ -11,12 +11,23 @@ sudo yum --enablerepo=extras install -y epel-release
 sudo yum -y install ansible python python-devel python-pip vim gcc git python-netaddr wget tcpdump curl vconfig telnet wireshark-gnome wireshark
 sudo yum -y group install "Development Tools"
 
-echo 'INSTALLING AND UPDATING APPS // PIP ...'
+echo 'INSTALLING AND UPDATING APPS // PIP2 ...'
 
 sudo pip install --upgrade pip
 sudo pip install --upgrade setuptools
 sudo pip install --upgrade lxml
 sudo pip install -r requirements.txt
+
+echo 'INSTALLING AND UPDATING APPS // Python 3.7 ...'
+
+cd /opt
+sudo wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
+sudo taf -xzf Python-3.7.3.tgz
+cd Python-3.7.3
+sudo ./configure
+sudo make
+sudo make altinstall
+cd $CURRENT_PATH
 
 echo 'INSTALLING AND UPDATING APPS // VIRTUAL BOX ...'
 
