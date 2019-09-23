@@ -14,3 +14,8 @@ I'm quite often rebuilding the lab VM or server and to ease this task decided to
 Just download or copy the content of the files on the freshly installed CentOS Linux and execute:
 - `./initial_setup_virtualbox.sh` for installation with Virtual Box
 - `./initial_setup_kvm.sh` for installation with QEMU/KVM
+
+# Do you want to automate network like a profi?
+Join the network automation course: http://training.karneliuk.com
+
+(c) 2016-2019 karneliuk.com
