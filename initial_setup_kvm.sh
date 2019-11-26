@@ -24,7 +24,7 @@ echo 'INSTALLING AND UPDATING APPS // Python 3.7 ...'
 
 sudo yum -y install openssl-devel libffi-devel zlib-devel
 cd /opt
-sudo wget https://www.python.org/ftp/python/${PYTHON_VERSION}/${PYTHON_VERSION}.tgz
+sudo wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz
 sudo tar -xzf Python-${PYTHON_VERSION}.tgz
 cd Python-${PYTHON_VERSION}
 sudo ./configure
